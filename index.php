@@ -60,7 +60,7 @@ $showContentBottom = $this->countModules('content-bottom');
 
     <!--Skip Links-->
     <a href="#main" class="visually-hidden focusable">
-        <?php echo JText::_('TPL_LINKINGSYSTEMSOFCARE_SKIP_TO_CONTENT'); ?>
+        <?php echo JText::_('TPL_LINKINGSYSTEMSOFCARE_SKIP_TO_CONTENTs'); ?>
     </a>
 
     <a href="#nav" class="visually-hidden focusable">
