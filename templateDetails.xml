@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extension version="3.5" type="template">
+  <name>Linking Systems of Care</name>
+  <creationDate>04/04/2017</creationDate>
+  <author>Sal Bernal</author>
+  <authorEmail>sbernal@ncjfcj.org</authorEmail>
+  <authorUrl>http://ncjfcj.org</authorUrl>
+  <license>GNU/GPL</license>
+  <version>1.0.0</version>
+  <description>TPL_LINKINGSYSTEMSOFCARE_XML_DESCRIPTION</description>
+  <files>
+    <filename>index.php</filename>
+    <filename>templateDetails.xml</filename>
+    <folder>html</folder>
+    <folder>js</folder>
+    <folder>stylesheets/css</folder>
+    <folder>images</folder>
+    <folder>fonts</folder>
+  </files>
+  <positions>
+    <position>breadcrumb</position>
+    <position>main-nav</position>
+    <position>hero</position>
+    <position>content-bottom</position>
+    <position>footer-1</position>
+    <position>footer-2</position>
+    <position>footer-3</position>
+  </positions>
+
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.tpl_linkingsystemsofcare.ini</language>
+    <language tag="en-GB">en-GB/en-GB.tpl_linkingsystemsofcare.sys.ini</language>
+  </languages>
+
+</extension>

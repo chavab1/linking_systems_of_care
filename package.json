@@ -1,0 +1,20 @@
+{
+  "name": "linking_systems_of_care",
+  "description": "Linking Systems of Care website theme",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Sal Bernal",
+  "homepage": "linkingsystemsofcare.org",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "cssnano": "^3.10.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-postcss": "^0.8.0",
+    "grunt-px-to-rem": "^0.4.0",
+    "grunt-sass": "^2.0.0",
+    "matchdep": "*"
+  }
+}
