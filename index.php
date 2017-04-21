@@ -50,8 +50,10 @@ $showContentBottom = $this->countModules('content-bottom');
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
     <meta name="apple-mobile-web-app-capable" content="YES" />
     <meta charset="utf-8" />
+    <meta name="referrer" content="unsafe-url" />
 
     <?php
 
