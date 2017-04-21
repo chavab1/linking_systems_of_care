@@ -58,7 +58,7 @@ $showContentBottom = $this->countModules('content-bottom');
     // Generate Meta tags
     foreach($this->_metaTags as $type => $items){
         foreach($items as $name => $content){
-            if(!empty($content)){
+            if($name != "content-type" && !empty($content)){
                 echo '<meta name="' . $name . '" content="' . htmlspecialchars($content) . '" />';
             }
         }
@@ -72,9 +72,7 @@ $showContentBottom = $this->countModules('content-bottom');
     ?>
 
     <!--Generate Title-->
-    <title>
-        <?php echo htmlspecialchars($this->getTitle(), ENT_COMPAT, 'UTF-8'); ?>
-    </title>
+    <title><?php echo trim(htmlspecialchars($this->getTitle(), ENT_COMPAT, 'UTF-8')); ?></title>
 
 
 
