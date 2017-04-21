@@ -83,7 +83,23 @@ $showContentBottom = $this->countModules('content-bottom');
     <script src="/templates/linkingsystemsofcare/js/build/vendors.min.js"></script>
 
     <base href="/" />
-    <!--[if lte IE 8]><link href="/css/ie.css" rel="stylesheet" /><![endif]-->
+    <!--[if lte IE 8]><link href="<?php echo $templateUrl ?>/css/ie.css" rel="stylesheet" /><![endif]-->
+
+
+    <!--Favicons-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="<?php echo $templateUrl ?>/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo $templateUrl ?>/images/favicon/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Linking Systems of Care" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="<?php echo $templateUrl ?>/images/favicon/mstile-144x144.png" />
+
+
 </head>
 <body <?php echo ($isHome ? 'class="home"': "") ?>>
 
