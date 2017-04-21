@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <metadata>
-  <layout title="TPL_LINKING_SYSTEMS_OF_CARE_COM_CONTENT_CATEGORY_COLUMNS_ON_TOP_TITLE" option="TPL_LINKING_SYSTEMS_OF_CARE_COM_CONTENT_CATEGORY_COLUMNS_ON_TOP_OPTION">
+  <layout title="TPL_LINKINGSYSTEMSOFCARE_COM_CONTENT_CATEGORY_COLUMNS_ON_TOP_TITLE" option="TPL_LINKINGSYSTEMSOFCARE_COM_CONTENT_CATEGORY_COLUMNS_ON_TOP_OPTION">
     <help
 			key = "JHELP_MENUS_MENU_ITEM_ARTICLE_CATEGORY_BLOG"
 		/>
     <message>
-      <![CDATA[TPL_LINKING_SYSTEMS_OF_CARE_COM_CONTENT_CATEGORY_COLUMNS_ON_TOP_DESC]]>
+      <![CDATA[TPL_LINKINGSYSTEMSOFCARE_COM_CONTENT_CATEGORY_COLUMNS_ON_TOP_DESC]]>
     </message>
   </layout>
   <!-- Add fields to the request variables for the layout. -->
@@ -21,30 +21,30 @@
 
   <!-- Add fields to the parameters object for the layout. -->
   <fields name="params">
-    <fieldset name="layout" label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_SETTINGS">
+    <fieldset name="layout" label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_SETTINGS">
       <field name="num_columns"
 				type="list"
-				label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_NUM_COLUMNS_LABEL"
-				description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_NUM_COLUMNS_DESC">
+				label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_NUM_COLUMNS_LABEL"
+				description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_NUM_COLUMNS_DESC">
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </field>
       <field name="columns_location"
 				type="list"
-				label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_LOCATION_LABEL"
-				description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_LOCATION_DESC">
+				label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_LOCATION_LABEL"
+				description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_LOCATION_DESC">
         <option value="top">Top</option>
         <option value="bottom">Bottom</option>      
       </field>
       <field name="columns_title"
 				type="text"
-				label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_TITLE_LABEL"
-				description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_TITLE_DESC" />
+				label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_TITLE_LABEL"
+				description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_TITLE_DESC" />
       <field name="columns_title_tag"
 				type="list"
-				label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_TITLE_TAG_LABEL"
-				description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_TITLE_TAG_DESC">
+				label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_TITLE_TAG_LABEL"
+				description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_TITLE_TAG_DESC">
         <option value="2">H2</option>
         <option value="3">H3</option>
         <option value="4">H4</option>
@@ -52,20 +52,20 @@
       </field>
       <field name="columns_title_class"
       type="text"
-      label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_TITLE_CLASS_LABEL"
-      description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMNS_TITLE_CLASS_DESC" />
+      label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_TITLE_CLASS_LABEL"
+      description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMNS_TITLE_CLASS_DESC" />
       <field name="column_class"
 				type="text"
-				label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMN_CLASS_LABEL"
-				description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_COLUMN_CLASS_DESC" />
+				label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMN_CLASS_LABEL"
+				description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_COLUMN_CLASS_DESC" />
       <field name="row_class"
 				type="text"
-				label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_ROW_CLASS_LABEL"
-				description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_ROW_CLASS_DESC" />
+				label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_ROW_CLASS_LABEL"
+				description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_ROW_CLASS_DESC" />
       <field name="show_horizontal_dividers"
 				type="list"
-				label="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_SHOW_HORIZONTAL_DIVIDERS_LABEL"
-				description="TPL_LINKING_SYSTEMS_OF_CARE_LAYOUT_SHOW_HORIZONTAL_DIVIDERS_DESC">
+				label="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_SHOW_HORIZONTAL_DIVIDERS_LABEL"
+				description="TPL_LINKINGSYSTEMSOFCARE_LAYOUT_SHOW_HORIZONTAL_DIVIDERS_DESC">
         <option value="0">JHIDE</option>
         <option value="1">JSHOW</option>
       </field>
