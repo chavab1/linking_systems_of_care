@@ -13,7 +13,7 @@ Email:     info@linkingsystemsofcare.org
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-// get rid of the stupid generator line
+// Remove Generator Line
 $this->setGenerator('');
 
 // determine if this is the home page

@@ -16,6 +16,8 @@
     <folder>stylesheets/css</folder>
     <folder>images</folder>
     <folder>fonts</folder>
+    <filename>gruntfile.js</filename>
+    <filename>package.json</filename>
   </files>
   <positions>
     <position>breadcrumb</position>
