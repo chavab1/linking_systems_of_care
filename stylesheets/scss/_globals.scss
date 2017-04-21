@@ -1,0 +1,122 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,picture,section,summary {
+	display: block;
+}
+
+::before,
+::after {
+	box-sizing: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+img {
+	-ms-interpolation-mode: bicubic;
+}
+
+body {
+    color: #33383a;
+}
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin: 20px 0;
+}
+
+ol, ul {
+    margin: 20px 0;
+}
+
+ol {
+    list-style-position: inside;
+    li {
+        margin: 0 0 20px;
+    }
+}
+
+ul {
+    list-style: inside none;
+    li {
+        position: relative;
+        margin: 0 0 20px;
+        padding: 0 0 0 12px;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            background: $brand-primary;
+        }
+    }
+}
+
+.list-nested {
+    margin: 20px 0 0 20px;
+}
+
+input[type="search"], input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+}
+
+/**
+ * Hide elements from all users.
+ */
+.hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen readers.
+ */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+/**
+ * The .focusable class extends the .visually-hidden class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+  width: auto;
+}
+
+/**
+ * Hide visually and from screen readers, but maintain layout.
+ */
+.invisible {
+  visibility: hidden;
+}
+
+a {
+    transition: color .3s ease, background .3s ease;
+    &:link, &:visited, &:focus, &:hover, &:active {
+        text-decoration: none;
+    }
+}
+

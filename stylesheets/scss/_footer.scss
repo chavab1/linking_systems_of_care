@@ -1,0 +1,60 @@
+﻿footer {
+    padding: 0 0 20px;
+    color: #FFF;
+    background: $gray;
+    @media (min-width: $screen-md) {
+        padding: 30px 0 40px;
+    }
+    h3 {
+        font: 22px $font-family-light;
+        text-transform: uppercase;
+    }
+    .nav > li {
+        + li {
+            padding: 10px 0 0;
+        }
+        > a {
+            padding: 0;
+            font: normal 14px $font-family-condensed;
+            text-transform: uppercase;
+            &:focus {
+                color: #FFF;
+                background: none;
+            }
+            &:hover {
+                color: $blue-light;
+                background: none;
+            }
+        }
+    }
+
+}
+
+.footer-1 .moduletable {    
+    text-align: center;
+    @media (min-width: $screen-sm-min) {
+        float: left;
+        width: 50%;
+        text-align: left;
+    }
+}
+
+.footer-2 {
+    padding-bottom: 22px;
+    h3 {
+        text-align: center;
+    }
+}
+
+.footer-branding {
+    text-align: center;
+    a {
+        @extend %branding;
+        margin: 22px 0 0;
+    }
+}
+
+.disclaimer {
+    font-size: 14px;
+    font-style:italic
+}

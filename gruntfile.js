@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'stylesheets/css/styles.css': 'stylesheets/scss/styles.scss'
+                    'stylesheets/css/styles.min.css': 'stylesheets/scss/styles.scss'
                 }
             }
 
@@ -52,7 +52,7 @@ module.exports = function (grunt) {
                 ]
             },
             build: {
-                src: 'stylesheets/css/styles.css'
+                src: 'stylesheets/css/styles.min.css'
             }
         },
 
@@ -67,7 +67,7 @@ module.exports = function (grunt) {
                     map: true
                 },
                 files: {
-                    'stylesheets/css/styles.css': 'stylesheets/css/styles.css'
+                    'stylesheets/css/styles.min.css': 'stylesheets/css/styles.min.css'
                 }
             }
         },

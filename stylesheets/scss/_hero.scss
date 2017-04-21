@@ -1,0 +1,134 @@
+﻿
+$panTween: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+.hero {
+    position: relative;    
+    @media (min-width: $screen-sm-min) {
+        height: 300px;
+        overflow: hidden;
+    }
+    @media (min-width: $screen-md-min) {
+        height: 400px;
+    }
+    @media (min-width: 1274px) {
+        height: 500px;
+    }
+    picture {
+        width: 100%;
+        z-index: index($elements, hero-picture);
+        @media (min-width: $screen-sm-min) {
+            position: absolute;
+            width: auto;
+            height: 200px;
+            bottom: 0;
+            left: 0;
+            animation: panImage 35s $panTween .5s 1 forwards;
+        }       
+        @media (min-width: $screen-md-min) {
+            height: 300px;
+        }
+        @media (min-width: 1274px) {            
+            height: 400px;        
+        }
+    }
+}
+
+.hero-text-wrapper {
+    @media (min-width: $screen-sm-min) {
+        position: absolute;
+        width: 100%;
+        z-index: index($elements, hero-text-wrapper);
+    }
+    > div {
+        position: relative;
+        text-align: center;
+        font: italic normal 22px/22px Metropolis-Light, sans-serif;
+        color: $blue;
+        transition: transform .8s .5s cubic-bezier(0.680, -0.550, 0.265, 1.550), opacity 1s .5s ease; 
+        &:after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 26px;
+            top: 50%;
+            left: 50%;
+            margin-left: -40%;
+            background: $gray-light;
+            z-index: -1;
+            transform: skewX(2deg);
+            @media (min-width: $screen-sm-min) {
+                width: 110%;
+                left: -5%;
+                margin-left: 0;
+            }
+        }      
+        &.hero-text-1:after {
+            top: 30%;
+        }
+        &.reveal {
+            transform: scale(1);
+            opacity: 1;
+        }  
+        @media (min-width: $screen-sm-min) {
+            display: inline-block;
+            position: absolute;
+            text-align: left;
+            font-size: 26px;
+            top: 50px;
+            transform: scale(0);
+            opacity: 0;            
+        }       
+        @media (min-width: $screen-md) {
+
+        }
+        @media (min-width: $screen-lg) {            
+            top: 80px;                   
+        }
+    }
+}
+
+.hero-text-1 {
+    @media (min-width: $screen-sm-min) {
+        right: 10%;
+    }  
+    @media (min-width: $screen-lg) {            
+        right: 20%;       
+    }
+}
+
+.hero-text-2 {
+    margin: 20px 0 0;
+    @media (min-width: $screen-sm-min) {
+        left: 35%;
+        margin: 0;
+    }  
+    @media (min-width: $screen-lg) {            
+        left: 40%;       
+    }
+}
+
+.hero-text-3 {
+    margin: 20px 0 0;
+    @media (min-width: $screen-sm-min) {
+        left: 10%;
+        margin: 0;
+    }  
+    @media (min-width: $screen-lg) {            
+        left: 20%;       
+    }
+}
+
+@keyframes panImage {
+    0% {
+        transform: translateX(0%);
+    }
+    33% {
+        transform: translateX(-45%);
+    }
+    66% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-25%);
+    }
+}

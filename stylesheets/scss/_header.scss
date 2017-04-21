@@ -1,0 +1,79 @@
+﻿header {    
+    position: relative;
+    padding: 8px;
+    background: $gray-light;
+    text-align: center;
+    @media (min-width: $screen-sm-min) {
+        height: 120px;
+        padding: 21px;
+    }
+    .dropdown-menu {
+        width: 282px;
+        left: initial;
+        right: 0;
+        background: none;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        @media (min-width: $screen-sm-min) {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .btn {
+        font: 14px $font-family-condensed;
+    }
+}
+
+%branding {
+    display: inline-block;
+    svg, img {
+        width: 156px;
+        height: 52px;
+        @media (min-width: $screen-sm-min) {
+            width: 234px;
+            height: 78px;                
+        }
+    }
+}
+
+.site-branding {
+    @extend %branding;
+    float: left;
+    @media (min-width: $screen-md) {
+        float: none;
+    }
+}
+
+.header-search {
+    display: inline-block;
+    margin: 12px 0;
+    float: right;
+    @media (min-width: $screen-sm-min) {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        margin: 0;
+    }
+    .dropdown-toggle {
+        padding: 6px;
+        @media (min-width: $screen-sm-min) {
+            display: none;
+        }
+    }
+    form {
+        .inputbox, .search-button {
+            float: left;
+        }
+    }
+}
+
+.search-button {
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: #FFF;
+    }
+}
+

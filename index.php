@@ -13,6 +13,9 @@ Email:     info@linkingsystemsofcare.org
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
+// get rid of the stupid generator line
+$this->setGenerator('');
+
 // determine if this is the home page
 $isHome = false;
 $app = JFactory::getApplication();
@@ -29,10 +32,7 @@ unset($this->_script['text/javascript']);
 
 // Stylesheets
 $templateUrl = $this->baseurl.'/templates/'.$this->template;
-$this->addStyleSheet($this->baseurl . '/templates/system/css/system.css');
-$this->addStyleSheet($this->baseurl . '/templates/system/css/general.css');
-$this->addStyleSheet($templateUrl . '/stylesheets/css/styles.css', 'text/css', 'screen');
-$this->addScript($templateUrl . '/js/build/vendors.min.js');
+
 
 // Output as HTML5
 $this->setHtml5(true);
@@ -51,9 +51,39 @@ $showContentBottom = $this->countModules('content-bottom');
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="apple-mobile-web-app-capable" content="YES" />
-    <jdoc:include type="head" />
-    <base href="<?php $this->getBase(); ?>" />
-    <!--[if lte IE 8]><link href="<?php $templateURL ?>/css/ie.css" rel="stylesheet" /><![endif]-->
+    <meta charset="utf-8" />
+
+    <?php
+
+    // Generate Meta tags
+    foreach($this->_metaTags as $type => $items){
+        foreach($items as $name => $content){
+            if(!empty($content)){
+                echo '<meta name="' . $name . '" content="' . htmlspecialchars($content) . '" />';
+            }
+        }
+    }
+
+    // Generate Description tag
+    $documentDescription = $this->getDescription();
+    if($documentDescription){
+        echo '<meta name="description" content="' . htmlspecialchars($documentDescription) . '" />';
+    }
+    ?>
+
+    <!--Generate Title-->
+    <title>
+        <?php echo htmlspecialchars($this->getTitle(), ENT_COMPAT, 'UTF-8'); ?>
+    </title>
+
+
+
+    <link href="/templates/linkingsystemsofcare/stylesheets/css/system_general.css" rel="stylesheet"/>
+    <link href="/templates/linkingsystemsofcare/stylesheets/css/styles.min.css" rel="stylesheet" media="screen" />
+    <script src="/templates/linkingsystemsofcare/js/build/vendors.min.js"></script>
+
+    <base href="/" />
+    <!--[if lte IE 8]><link href="/css/ie.css" rel="stylesheet" /><![endif]-->
 </head>
 <body <?php echo ($isHome ? 'class="home"': "") ?>>
 
@@ -117,17 +147,17 @@ $showContentBottom = $this->countModules('content-bottom');
     <section class="hero">
         <picture>
             <source media="(max-width: 767px)"
-                srcset="/images/headers/row_of_kids_320.jpg 320w, /images/headers/row_of_kids_569.jpg 569w, /images/headers/row_of_kids_768.jpg 768w">
-                <source media="(min-width: 768px) and (max-width: 991px)"
-                    srcset="/images/headers/row_of_kids_1747.jpg">
-                    <source media="(min-width: 992px) and (max-width: 1273px)"
-                        srcset="/images/headers/row_of_kids_2621.jpg">
-                        <source media="(min-width: 1274px)"
-                            srcset="/images/headers/row_of_kids_3494.jpg">
-                            <img srcset="/images/headers/row_of_kids_3494.jpg 3494w"
-                                src="/images/headers/row_of_kids_3494.jpg"
-                                alt="Row of kids laying on white floor"
-                                title="Happy Group of Kids" />
+            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_320.jpg 320w, <?php echo $templateUrl ?>/images/hero/row_of_kids_569.jpg 569w, <?php echo $templateUrl ?>/images/hero/row_of_kids_768.jpg 768w">
+            <source media="(min-width: 768px) and (max-width: 991px)"
+            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_1747.jpg">
+            <source media="(min-width: 992px) and (max-width: 1273px)"
+            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_2621.jpg">
+            <source media="(min-width: 1274px)"
+            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg">
+            <img srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg 3494w"
+            src="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg"
+            alt="Row of kids laying on white floor"
+            title="Happy Group of Kids" />
         </picture>
 
         <div class="hero-text-wrapper">

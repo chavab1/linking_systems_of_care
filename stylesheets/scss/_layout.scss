@@ -1,0 +1,55 @@
+﻿.bkgd-blue {
+    color: #FFF;
+    background: $blue;
+    h3 {
+        color: $brand-primary;
+    }
+}
+
+.bkgd-gray-light {
+    background: $gray-light;
+}
+
+.border-white {
+    border: 1px solid #FFF;
+}
+
+.boxed {
+    padding: 0 20px 20px;
+}
+
+.orange {
+    color: $brand-primary;
+}
+
+.no-gutter { 
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.no-gutter > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.home {
+    .bkgd-blue {
+        @media (min-width: $screen-md) {
+            min-height: 482px;
+        }
+        @media(min-width: $screen-lg) {
+            min-height: 468px;
+        }
+    }
+}
+
+.partner-logos {
+    padding: 40px 0;
+    text-align: center;
+    img {
+        display: inline-block;
+        max-width: 220px;
+        max-height: 100px;
+        margin: 20px 10px;
+    }
+}
