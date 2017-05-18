@@ -132,3 +132,21 @@ $panTween: cubic-bezier(0.445, 0.050, 0.550, 0.950);
         transform: translateX(-25%);
     }
 }
+
+
+
+
+//___________________________________________ No CSS Support  _____________________________________//
+
+html.css-notransforms {
+    .hero-text-wrapper {
+        > div {
+            @media (min-width: $screen-sm-min) {            
+                display: none;
+            }
+            &.reveal {
+                display: block;
+            }
+        }
+    }
+}

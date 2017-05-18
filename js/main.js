@@ -40,6 +40,24 @@ if (!Modernizr.svgasimg){
     for (var i = 0; i < partners.length; i++) {
         var svgSrc = partners[i].getAttribute('src');
         var src = svgSrc.slice(0, svgSrc.indexOf("."));
-        console.log(svgSrc + '.png');
     }
 }
+
+
+    // Main Nav Sub-Menu Reveal
+    jQuery('.deeper.parent').hoverIntent({
+        over: open,
+        out: close,
+        interval: 10,
+        timeout: 400
+    });
+
+
+    function open(){
+        jQuery(this).addClass('open').children('a').attr('aria-expanded', true);
+        jQuery(this).children('ul').attr('aria-hidden', false).attr('aria-expanded', true);
+    }
+    function close(){
+        jQuery(this).removeClass('open').children('a').attr('aria-expanded', false);
+        jQuery(this).children('ul').attr('aria-hidden', true).attr('aria-expanded', false);
+    }
