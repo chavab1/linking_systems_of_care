@@ -27,7 +27,9 @@
             }
         }
     }
-
+    .site-branding {
+        float: none;
+    }
 }
 
 .footer-1 .moduletable {    
@@ -49,12 +51,27 @@
 .footer-branding {
     text-align: center;
     a {
-        @extend %branding;
-        margin: 22px 0 0;
+        display: inline-block;
+        margin: 10px 20px;
+        @media (min-width: $screen-md-min) {
+            margin: 22px 0 0;
+        }
     }
 }
 
 .disclaimer {
     font-size: 14px;
     font-style:italic
+}
+
+.logo-ncjfcj {
+    svg {
+        width: 160px;
+        height: 70px;
+        fill: #FFF;
+        @media (min-width: $screen-sm-min) {
+            width: 260px;
+            height: 112px;               
+        }        
+    }
 }

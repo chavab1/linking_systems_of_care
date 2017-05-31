@@ -24,6 +24,12 @@
     .btn {
         font: 14px $font-family-condensed;
     }
+    .site-branding {
+        float: left;
+        @media (min-width: $screen-md) {
+            float: none;
+        }       
+    }
 }
 
 %branding {
@@ -40,10 +46,6 @@
 
 .site-branding {
     @extend %branding;
-    float: left;
-    @media (min-width: $screen-md) {
-        float: none;
-    }
 }
 
 .header-search {

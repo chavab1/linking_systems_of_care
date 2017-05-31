@@ -52,6 +52,7 @@ defined( '_JEXEC' ) or die;
 
 ?>
 
+<main>
 <!--Columns on the top -->
 <?php if($this->params->get('columns_location') == 'top') : ?>
 <div class="columns<?php echo $this->pageclass_sfx;?> row">
@@ -226,4 +227,4 @@ defined( '_JEXEC' ) or die;
 <?php endif; ?>
 
 
-
+</main>

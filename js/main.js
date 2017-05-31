@@ -44,20 +44,45 @@ if (!Modernizr.svgasimg){
 }
 
 
-    // Main Nav Sub-Menu Reveal
-    jQuery('.deeper.parent').hoverIntent({
-        over: open,
-        out: close,
-        interval: 10,
-        timeout: 400
-    });
+// Main Nav Sub-Menu Reveal
+jQuery('.deeper.parent').hoverIntent({
+    over: open,
+    out: close,
+    interval: 100,
+    timeout: 200
+});
 
 
-    function open(){
-        jQuery(this).addClass('open').children('a').attr('aria-expanded', true);
-        jQuery(this).children('ul').attr('aria-hidden', false).attr('aria-expanded', true);
+function open(){
+    jQuery(this).addClass('open').children('a').attr('aria-expanded', true);
+    jQuery(this).children('ul').attr('aria-hidden', false).attr('aria-expanded', true);
+}
+function close(){
+    jQuery(this).removeClass('open').children('a').attr('aria-expanded', false);
+    jQuery(this).children('ul').attr('aria-hidden', true).attr('aria-expanded', false);
+}
+
+
+// Hero Image Animation
+
+var lastScrollTop = 0;
+
+$('.hero picture').on('inview', function(event, isInView) {
+    if (isInView) {    
+        $(window).on('scroll.hero', panHero);
+    } else {
+        $(window).off('scroll.hero');
     }
-    function close(){
-        jQuery(this).removeClass('open').children('a').attr('aria-expanded', false);
-        jQuery(this).children('ul').attr('aria-hidden', true).attr('aria-expanded', false);
+});
+
+
+function panHero() {
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop) {
+        $('.hero picture').velocity({left: '-=1px'}, 20, '[.41,.14,.5,.94]');
     }
+    else {
+        $('.hero picture').velocity({left: '+=1px'}, 20, [.41,.14,.5,.94]);
+    }
+    lastScrollTop = st;  
+}

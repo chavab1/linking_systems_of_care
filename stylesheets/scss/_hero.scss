@@ -1,6 +1,4 @@
 ﻿
-$panTween: cubic-bezier(0.445, 0.050, 0.550, 0.950);
-
 .hero {
     position: relative;    
     @media (min-width: $screen-sm-min) {
@@ -21,14 +19,16 @@ $panTween: cubic-bezier(0.445, 0.050, 0.550, 0.950);
             width: auto;
             height: 200px;
             bottom: 0;
-            left: 0;
-            animation: panImage 35s $panTween .5s 1 forwards;
+            left: 50%;
+            margin-left: -874px;
         }       
         @media (min-width: $screen-md-min) {
             height: 300px;
+            margin-left: -1310px;
         }
         @media (min-width: 1274px) {            
-            height: 400px;        
+            height: 400px;  
+            margin-left: -1747px;      
         }
     }
 }
@@ -118,20 +118,7 @@ $panTween: cubic-bezier(0.445, 0.050, 0.550, 0.950);
     }
 }
 
-@keyframes panImage {
-    0% {
-        transform: translateX(0%);
-    }
-    33% {
-        transform: translateX(-45%);
-    }
-    66% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-25%);
-    }
-}
+
 
 
 

@@ -26,11 +26,12 @@ img {
 }
 
 body {
-    color: #33383a;
+  color: #33383a;
 }
 
 main {
-    padding: 20px 0;
+  margin: 0 0 60px;
+  padding: 20px 0;
 }
 
 section {
@@ -66,9 +67,6 @@ ul {
     }
 }
 
-.list-nested {
-    margin: 20px 0 0 20px;
-}
 
 input[type="search"], input[type="text"], input[type="email"], textarea {
     padding: 10px;
