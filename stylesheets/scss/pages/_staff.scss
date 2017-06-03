@@ -1,0 +1,147 @@
+.staff {
+	main {
+		text-align: center;
+	}
+	article {		
+		@include clearfix;
+		margin: 0 0 20px;
+		padding: 20px;	
+		background: $gray-light;	
+		vertical-align: top;
+		text-align: left;
+		@media (min-width: $screen-sm-min) {
+			display: inline-block;
+			width: 47%;
+			margin: 1%;
+		}
+		@media (min-width: $screen-md-min) {
+			width: 32%;
+			margin: .5%;
+		}
+		@media (min-width: $screen-lg-min) {
+			min-height: 510px;			
+		}					
+		img {
+			float: left;			
+			width: 55%;
+			max-width: 100%;
+			margin: 0 0 20px;
+			@media (min-width: $screen-sm-min) {
+				float: none;
+				width: 100%;
+				margin: 0;
+			}
+		}
+		h3 {
+			text-align: center;
+			@media (max-width: $screen-sm-min) {
+				margin: 0 0 10px;
+			}
+		}
+		h4 {
+			display: inline-block;
+			color: $blue;
+		}
+		hr {
+			border-color: $gray;		
+		}
+		> button {
+			display: block;
+			margin: 20px auto 0;
+		}	
+	}
+}
+
+.staff-header {
+	float: right;
+	width: 45%;
+	padding: 10px;
+	@media (min-width: $screen-sm-min)	{
+		float: none;
+		width: auto;
+		padding: 0;
+	}
+}
+
+.staff-body {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 90%;
+	margin: 10px 5%;
+	padding: 20px;	
+	z-index: index($elements, 'staff-body');
+	transform-origin: center;
+	transform: scale(0);
+	transition: transform .5s cubic-bezier(.31,.3,.54,1.05), opacity .6s ease;
+	opacity: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	@media (min-width: $screen-md-min) {
+		width: 800px;
+		margin: 20px auto 0;
+		padding: 40px;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background: $gray-light;	
+	}
+	&:after {
+		content: '';
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -2;
+		background: #000;
+	}
+	&.open {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.staff-body-close {
+	float: right;
+	color: $brand-primary;
+	background: none;
+	font-size: 30px;
+	line-height: 20px;
+	transition: color .4s  ease;
+	&:hover {
+		color: $blue-light;
+	}
+}
+
+.staff-overlay {	
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	opacity: 0;
+	z-index: index($elements, 'staff-overlay');
+	transition: opacity .5s  ease;
+	&.opacity {
+		opacity: 0.5;
+	}
+}
+
+
+html.no-csstransforms {
+	.staff-body {
+		display: none;
+		&.open {
+			display: block;
+		}
+	}
+}

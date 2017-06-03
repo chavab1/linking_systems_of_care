@@ -58,6 +58,9 @@
                     &:last-of-type {
                         margin: 0 0 10px;
                     }
+                    &:only-of-type {
+                        margin: 10px 0;
+                    }
                 }
             } 
             &.open {

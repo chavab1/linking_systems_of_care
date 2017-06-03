@@ -85,4 +85,26 @@ function panHero() {
         $('.hero picture').velocity({left: '+=1px'}, 20, [.41,.14,.5,.94]);
     }
     lastScrollTop = st;  
-}
+};
+
+
+
+// Staff Page Modal
+
+$('.staff article > button').on('click', function(){
+    $modal = $(this).next('.staff-body');
+    $($modal).addClass('open');
+    $('<div class="staff-overlay"></div>').insertAfter($modal);
+    window.setTimeout(function(){
+        $('.staff-overlay').addClass('opacity');
+    }, 100);
+})
+
+
+$('.staff-body-close').on('click', function(){
+    $modal = $(this).parent('.staff-body');  
+    $($modal).removeClass('open').next('.staff-overlay').removeClass('opacity');
+    window.setTimeout(function(){
+        $($modal).removeClass('open').next('.staff-overlay').remove();
+    }, 300);    
+})

@@ -31,12 +31,20 @@ h1, h2 {
 }
 
 h1 {
-    color: $brand-primary;
-    font: normal 46px/44px Metropolis-Light, sans-serif;
+  color: $brand-primary;
+  font: normal 40px/38px Metropolis-Light, sans-serif;
+  @media (min-width: $screen-md-min) {
+    font-size: 46px;
+    line-height: 44px;    
+  }
 }
 
 h2 {
-    font: normal 28px/26px HelveticaNeue-CondensedBold, sans-serif;
+  font: normal 24px/22px HelveticaNeue-CondensedBold, sans-serif;
+  @media (min-width: $screen-md-min) {
+    font-size: 28px;
+    line-height: 26px;
+  }  
 }
 
 h3 {

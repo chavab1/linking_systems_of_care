@@ -16,7 +16,7 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'js/build/vendors.min.js': ['js/vendors/jquery-2.2.4.min.js', 'js/vendors/modernizr-3.4.0.min.js', 'js/vendors/bootstrap.min.js', 'js/vendors/picturefill-3.0.2.min.js', 'js/vendors/svgxuse.js']
+                    'js/build/vendors.min.js': ['js/vendors/jquery-2.2.4.min.js', 'js/vendors/modernizr-3.4.0.min.js', 'js/vendors/respond.min.js', 'js/vendors/bootstrap.min.js', 'js/vendors/picturefill-3.0.2.min.js', 'js/vendors/svgxuse.js', 'js/vendors/hoverIntent.min.js', 'js/vendors/inview.min.js', 'js/vendors/velocity.min.js', 'js/vendors/velocity.ui.min.js']
                 }
             },
             main: {
