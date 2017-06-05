@@ -52,6 +52,15 @@ jQuery('.deeper.parent').hoverIntent({
     timeout: 200
 });
 
+// For Mobile Navigation
+var hashLinks = document.querySelectorAll('a[href="#"]');
+
+for(var i = 0; i < hashLinks.length; i++) {
+    hashLinks[i].addEventListener('click', function(e){
+    e.preventDefault ? e.preventDefault() : e.returnValue = false; 
+    })
+};
+
 
 function open(){
     jQuery(this).addClass('open').children('a').attr('aria-expanded', true);
@@ -61,6 +70,10 @@ function close(){
     jQuery(this).removeClass('open').children('a').attr('aria-expanded', false);
     jQuery(this).children('ul').attr('aria-hidden', true).attr('aria-expanded', false);
 }
+
+
+
+
 
 
 // Hero Image Animation
@@ -79,7 +92,7 @@ $('.hero picture').on('inview', function(event, isInView) {
 function panHero() {
     var st = $(this).scrollTop();
     if (st > lastScrollTop) {
-        $('.hero picture').velocity({left: '-=1px'}, 20, '[.41,.14,.5,.94]');
+        $('.hero picture').velocity({left: '-=1px'}, 20, [.41,.14,.5,.94]);
     }
     else {
         $('.hero picture').velocity({left: '+=1px'}, 20, [.41,.14,.5,.94]);
@@ -92,8 +105,9 @@ function panHero() {
 // Staff Page Modal
 
 $('.staff article > button').on('click', function(){
-    $modal = $(this).next('.staff-body');
-    $($modal).addClass('open');
+    $modal = $(this).next('.staff-body');    
+    $($modal).velocity('transition.expandIn', 1000, [.31,.3,.54,1.05]);
+    $modal.attr('aria-hidden', false);
     $('<div class="staff-overlay"></div>').insertAfter($modal);
     window.setTimeout(function(){
         $('.staff-overlay').addClass('opacity');
@@ -103,7 +117,8 @@ $('.staff article > button').on('click', function(){
 
 $('.staff-body-close').on('click', function(){
     $modal = $(this).parent('.staff-body');  
-    $($modal).removeClass('open').next('.staff-overlay').removeClass('opacity');
+    $($modal).velocity('transition.expandOut', 1000, [.31,.3,.54,1.05]).next('.staff-overlay').removeClass('opacity');
+    $modal.attr('aria-hidden', true);
     window.setTimeout(function(){
         $($modal).removeClass('open').next('.staff-overlay').remove();
     }, 300);    
