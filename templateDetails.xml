@@ -13,9 +13,10 @@
     <filename>templateDetails.xml</filename>
     <folder>html</folder>
     <folder>js</folder>
-    <folder>stylesheets/css</folder>
+    <folder>stylesheets</folder>
     <folder>images</folder>
     <folder>fonts</folder>
+    <folder>language</folder>
     <filename>gruntfile.js</filename>
     <filename>package.json</filename>
   </files>

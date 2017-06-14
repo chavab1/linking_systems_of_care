@@ -1,12 +1,12 @@
 ﻿
-.hero {
+.hero-home {
     position: relative;    
     @media (min-width: $screen-sm-min) {
-        height: 300px;
+        height: 400px;
         overflow: hidden;
     }
     @media (min-width: $screen-md-min) {
-        height: 400px;
+        height: 440px;
     }
     @media (min-width: 1274px) {
         height: 500px;
@@ -18,18 +18,37 @@
             position: absolute;
             width: auto;
             height: 200px;
-            bottom: 0;
+            bottom: 100px;
             left: 50%;
             margin-left: -874px;
         }       
         @media (min-width: $screen-md-min) {
             height: 300px;
             margin-left: -1310px;
+            bottom: 60px;
         }
         @media (min-width: 1274px) {            
             height: 400px;  
-            margin-left: -1747px;      
+            margin-left: -1747px; 
+            bottom: 30px;     
         }
+    }
+}
+
+.hero-disclaimer {
+    @include clearfix;
+    width: 100%;
+    padding: 6px 10px;
+    bottom: 0;
+    line-height: 22px;
+    z-index: index($elements, hero-disclaimer);
+    @media (min-width: $screen-sm-min) {
+        position: absolute;
+        padding: 6px 20px
+    }
+    > div {
+        max-width: 1318px;
+        margin: 0 auto;
     }
 }
 
@@ -39,86 +58,40 @@
         width: 100%;
         z-index: index($elements, hero-text-wrapper);
     }
-    > div {
-        position: relative;
-        text-align: center;
-        font: italic normal 22px/22px Metropolis-Light, sans-serif;
-        color: $blue;
-        transition: transform .8s .5s cubic-bezier(0.680, -0.550, 0.265, 1.550), opacity 1s .5s ease; 
-        &:after {
-            content: '';
-            position: absolute;
-            width: 80%;
-            height: 26px;
-            top: 50%;
-            left: 50%;
-            margin-left: -40%;
-            background: $gray-light;
-            z-index: -1;
-            transform: skewX(2deg);
-            @media (min-width: $screen-sm-min) {
-                width: 110%;
-                left: -5%;
-                margin-left: 0;
-            }
-        }      
-        &.hero-text-1:after {
-            top: 30%;
-        }
-        &.reveal {
+    h3 {
+        margin: 0 0 10px;
+    }
+} //.hero-text-wrapper
+
+.hero-text {
+    position: relative;
+    max-height: 0;
+    font: italic normal 18px/26px Metropolis-Light, sans-serif;
+    color: $blue;
+    overflow: hidden;
+    transition: transform .8s .5s cubic-bezier(0.680, -0.550, 0.265, 1.550), opacity 1s .5s ease, max-height .4s ease, padding .4s ease;    
+    &.reveal {
+        max-height: 360px;
+        padding: 10px;
+        @media (min-width: $screen-sm-min) {
+            padding: 20px;
             transform: scale(1);
             opacity: 1;
-        }  
-        @media (min-width: $screen-sm-min) {
-            display: inline-block;
-            position: absolute;
-            text-align: left;
-            font-size: 26px;
-            top: 50px;
-            transform: scale(0);
-            opacity: 0;            
-        }       
-        @media (min-width: $screen-md) {
-
         }
-        @media (min-width: $screen-lg) {            
-            top: 80px;                   
-        }
-    }
-}
-
-.hero-text-1 {
-    @media (min-width: $screen-sm-min) {
-        right: 10%;
     }  
-    @media (min-width: $screen-lg) {            
-        right: 20%;       
-    }
-}
-
-.hero-text-2 {
-    margin: 20px 0 0;
     @media (min-width: $screen-sm-min) {
-        left: 35%;
-        margin: 0;
-    }  
-    @media (min-width: $screen-lg) {            
-        left: 40%;       
+        position: absolute;
+        max-height: none;
+        padding: 20px; 
+        top: 0px;
+        transform: scale(0);
+        opacity: 0;            
+    }       
+    @media (min-width: $screen-lg) {    
+        width: 70%;        
+        margin: auto 15%;                
     }
 }
-
-.hero-text-3 {
-    margin: 20px 0 0;
-    @media (min-width: $screen-sm-min) {
-        left: 10%;
-        margin: 0;
-    }  
-    @media (min-width: $screen-lg) {            
-        left: 20%;       
-    }
-}
-
-
 
 
 

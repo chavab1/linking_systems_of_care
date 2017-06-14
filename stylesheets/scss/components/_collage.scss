@@ -1,0 +1,14 @@
+.collage {
+	img {
+		opacity: 0;
+		transition: transform .4s ease;
+		transform-origin: center;
+		&:hover {
+	        @media (min-width: $screen-md) {            
+	            transform: scale(1.15);                 
+	        }						
+		}
+	}
+}
+
+

@@ -32,6 +32,7 @@ body {
 main {
   margin: 0 0 60px;
   padding: 20px 0;
+  @include clearfix;
 }
 
 section {
@@ -45,7 +46,7 @@ ol, ul {
 ol {
     list-style-position: inside;
     li {
-        margin: 0 0 20px;
+        margin: 0 0 12px;
     }
 }
 
@@ -53,7 +54,7 @@ ul {
     list-style: inside none;
     li {
         position: relative;
-        margin: 0 0 20px;
+        margin: 0 0 12px;
         padding: 0 0 0 12px;
         &:before {
             content: "";

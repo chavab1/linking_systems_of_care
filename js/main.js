@@ -6,18 +6,17 @@ var lsof = {};
 lsof.viewport = window.innerWidth;
 
 
-// Fire only on Tablet and higher
-if (lsof.viewport > 767) {
+
 
     // Reveal text over hero image
     if (document.getElementsByClassName('hero-text').length) {
         var heroText = document.getElementsByClassName('hero-text');
         var step = 0;
-        function revealText() {
+        var revealText = function() {
             for (var i = 0; i < heroText.length; i++) {
                 heroText[i].className = heroText[i].className.replace(/(?:^|\s)reveal(?!\S)/g, '');
             }
-            heroText[step].className += ' reveal'
+            heroText[step].className += ' reveal';
 
             if (step < 2) {
                 step++;
@@ -25,13 +24,13 @@ if (lsof.viewport > 767) {
                 step = 0;
             }
 
-        }
-        setInterval(revealText, 4000);
+        };
+        setInterval(revealText, 5000);
     }
 
 
 
-}
+
 
 
 // Add .pngs for IE8
@@ -58,8 +57,8 @@ var hashLinks = document.querySelectorAll('a[href="#"]');
 for(var i = 0; i < hashLinks.length; i++) {
     hashLinks[i].addEventListener('click', function(e){
     e.preventDefault ? e.preventDefault() : e.returnValue = false; 
-    })
-};
+    });
+}
 
 
 function open(){
@@ -80,7 +79,7 @@ function close(){
 
 var lastScrollTop = 0;
 
-$('.hero picture').on('inview', function(event, isInView) {
+$('.hero-home picture').on('inview', function(event, isInView) {
     if (isInView) {    
         $(window).on('scroll.hero', panHero);
     } else {
@@ -92,13 +91,13 @@ $('.hero picture').on('inview', function(event, isInView) {
 function panHero() {
     var st = $(this).scrollTop();
     if (st > lastScrollTop) {
-        $('.hero picture').velocity({left: '-=1px'}, 20, [.41,.14,.5,.94]);
+        $('.hero-home picture').velocity({left: '-=1px'}, 40, [0.41,0.14,0.5,0.94]);
     }
     else {
-        $('.hero picture').velocity({left: '+=1px'}, 20, [.41,.14,.5,.94]);
+        $('.hero-home picture').velocity({left: '+=1px'}, 40, [0.41,0.14,0.5,0.94]);
     }
     lastScrollTop = st;  
-};
+}
 
 
 
@@ -106,20 +105,69 @@ function panHero() {
 
 $('.staff article > button').on('click', function(){
     $modal = $(this).next('.staff-body');    
-    $($modal).velocity('transition.expandIn', 1000, [.31,.3,.54,1.05]);
+    $($modal).velocity('transition.expandIn', 1000, [0.31,0.3,0.54,1.05]);
     $modal.attr('aria-hidden', false);
     $('<div class="staff-overlay"></div>').insertAfter($modal);
     window.setTimeout(function(){
         $('.staff-overlay').addClass('opacity');
     }, 100);
-})
+});
 
 
 $('.staff-body-close').on('click', function(){
     $modal = $(this).parent('.staff-body');  
-    $($modal).velocity('transition.expandOut', 1000, [.31,.3,.54,1.05]).next('.staff-overlay').removeClass('opacity');
+    $($modal).velocity('transition.expandOut', 1000, [0.31,0.3,0.54,1.05]).next('.staff-overlay').removeClass('opacity');
     $modal.attr('aria-hidden', true);
     window.setTimeout(function(){
         $($modal).removeClass('open').next('.staff-overlay').remove();
     }, 300);    
-})
+});
+
+function collageSmall() {
+    $('.collage').removeWhitespace().collagePlus({
+        'targetHeight': 90,
+        'fadeSpeed': 'fast',
+    });
+}
+function collageMed() {
+    $('.collage').removeWhitespace().collagePlus({
+        'targetHeight': 140,
+        'fadeSpeed': 'fast',
+    });
+}
+function collageLarge() {
+    $('.collage').removeWhitespace().collagePlus({
+        'targetHeight': 200,
+        'fadeSpeed': 'fast',
+    });
+}
+
+$(window).load(function(){
+    if(lsof.viewport > 1337) {
+        collageLarge();
+    }
+    else if(lsof.viewport > 991 && lsof.viewport < 1338){
+        collageMed();
+    }
+    else {
+        collageSmall();
+    }
+});
+
+var resizeTimer = null;
+$(window).bind('resize', function() {
+    lsof.viewport = window.innerWidth;
+    // hide all the images until we resize them
+    $('.collage img').css("opacity", 0);
+    // set a timer to re-apply the plugin    
+    if (resizeTimer) clearTimeout(resizeTimer);
+    if(lsof.viewport > 1337) {
+        resizeTimer = setTimeout(collageLarge, 200);
+    }
+    else if(lsof.viewport > 991 && lsof.viewport < 1338){
+        resizeTimer = setTimeout(collageMed, 200);
+    }
+    else {
+        resizeTimer = setTimeout(collageSmall, 200);
+    }        
+});

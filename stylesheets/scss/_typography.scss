@@ -41,12 +41,16 @@ h1 {
 
 h2 {
   font: normal 24px/22px HelveticaNeue-CondensedBold, sans-serif;
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-md) {
     font-size: 28px;
     line-height: 26px;
   }  
 }
 
 h3 {
-    font: normal 20px/18px Metropolis-SemiBold, sans-serif;
+    font: normal 18px/18px Metropolis-SemiBold, sans-serif;
+    @media (min-width: $screen-md) {
+      font-size: 20px;
+      line-height: 18px;
+    }
 }
