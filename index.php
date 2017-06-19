@@ -39,7 +39,7 @@ $this->setHtml5(true);
 
 // positions
 $showContentBottom = $this->countModules('content-bottom');
-
+$showHero = $this->countModules('hero');
 ?>
 
 
@@ -87,22 +87,18 @@ $showContentBottom = $this->countModules('content-bottom');
 
 
     <!--Favicons-->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="<?php echo $templateUrl ?>/images/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="<?php echo $templateUrl ?>/images/favicon/favicon-16x16.png" sizes="16x16" />
-    <meta name="application-name" content="Linking Systems of Care" />
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="<?php echo $templateUrl ?>/images/favicon/mstile-144x144.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $templateUrl ?>/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $templateUrl ?>/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $templateUrl ?>/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo $templateUrl ?>/images/favicon/manifest.json">
+    <link rel="mask-icon" href="<?php echo $templateUrl ?>/images/favicon/safari-pinned-tab.svg" color="#f58100">
+    <link rel="shortcut icon" href="<?php echo $templateUrl ?>/images/favicon/favicon.ico">
+    <meta name="msapplication-config" content="<?php echo $templateUrl ?>/images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#f58100">
 
 
 </head>
 <body <?php echo ($isHome ? 'class="home"': "") ?>>
-
 
     <!--Skip Links-->
     <a href="#main" class="visually-hidden focusable">
@@ -146,53 +142,29 @@ $showContentBottom = $this->countModules('content-bottom');
     <!--Nav-->
     <div class="nav-outer">
         <div class="container">
-            <nav id="navbar" class="container collapse navbar-collapse">
-                <a href="/" class="icon-home">
-                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300.7 248" overflow="scroll" role="link" aria-labelledby="title">
-                        <title>Home</title>
-                        <path d="M232.1 75V21.2h-55v6.4L150.3 4.4 3.9 130.8h54.4v116h184v-116h54.4L232.1 75zm-4.8 40.8v116h-47v-83.2h-60v83.2h-47v-116H44.2l106.1-91.6 41.8 36v-24h25v45.7l39.3 34h-29.1z"></path>
-                    </svg>
-                </a>
+            <nav id="navbar" class="main-nav container collapse navbar-collapse">
                 <jdoc:include type="modules" name="main-nav" />
             </nav>
         </div>
     </div>
 
     <!--Hero Image-->
-    <?php if($isHome): ?>
-    <section class="hero">
-        <picture>
-            <source media="(max-width: 767px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_320.jpg 320w, <?php echo $templateUrl ?>/images/hero/row_of_kids_569.jpg 569w, <?php echo $templateUrl ?>/images/hero/row_of_kids_768.jpg 768w">
-            <source media="(min-width: 768px) and (max-width: 991px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_1747.jpg">
-            <source media="(min-width: 992px) and (max-width: 1273px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_2621.jpg">
-            <source media="(min-width: 1274px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg">
-            <img srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg 3494w"
-            src="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg"
-            alt="Row of kids laying on white floor"
-            title="Happy Group of Kids" />
-        </picture>
+    <?php
+        if($isHome) {
+            include 'includes/hero.php';
+        }
+     ?>
 
-        <div class="hero-text-wrapper">
-            <div class="hero-text hero-text-1 reveal">
-                Healing Individuals,
-                <br />Families & Communities
-            </div>
-            <div class="hero-text hero-text-2">Informed Decision Making</div>
-            <div class="hero-text hero-text-3">Linked Systems of Care</div>
-        </div>
-    </section>
-    <?php endif; ?>
+    <?php if($showHero): ?>
+        <section class="hero">
+            <jdoc:include type="modules" name="hero" />
+        </section>
+    <?php endif; ?>    
 
     <!--Content-->
     <div class="container">
         <jdoc:include type="message" />
-        <main>
-            <jdoc:include type="component" />
-        </main>
+        <jdoc:include type="component" />
     </div>
 
     <?php if($showContentBottom): ?>
@@ -214,12 +186,19 @@ $showContentBottom = $this->countModules('content-bottom');
                     <jdoc:include type="modules" name="footer-2" style="xhtml" />
                 </section>
                 <section class="col-md-4 footer-branding">
-                    <a href="/" title="Go to Home Page">
+                    <a href="/" title="Go to Home Page" class="site-branding">
                         <svg role="presentation">
-                            <title>Vision 21 OVC-Funded Project Logo</title>
+                            <title>Go to Vision 21 OVC-Funded Project Homepage</title>
                             <use xlink:href="<?php echo $templateUrl ?>/images/svgs/sprite.svg#logo-vision-21"></use>
                         </svg>
                         <!--[if lt IE 8]><img src="<?php echo $templateUrl ?>/images/logo_vision_21.png" alt="Vision 21 Logo"/><![endif]-->
+                    </a>
+                    <a href="http://ncjfcj.org" title="Visit National Council of Juvenile and Family Court Judges" class="logo-ncjfcj">
+                        <svg role="presentation">
+                            <title>Visit National Council of Juvenile and Family Court Judges</title>
+                            <use xlink:href="<?php echo $templateUrl ?>/images/svgs/sprite.svg#logo-ncjfcj"></use>                              
+                        </svg> 
+                        <!--[if lt IE 8]><img src="<?php echo $templateUrl ?>/images/logo_ncjfcj.png" alt="NCJFCJ Logo"/><![endif]-->                           
                     </a>
                 </section>
             </div>
